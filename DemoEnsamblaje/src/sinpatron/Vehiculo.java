@@ -5,11 +5,13 @@
  */
 package sinpatron;
 
+import patrones.VehiculoBase;
+
 /**
  *
  * @author david_000
  */
-public class Vehiculo {
+public class Vehiculo implements IMotor, VehiculoBase{
    public String color;
    public boolean direccionAsistida;
    public String marca;
@@ -17,6 +19,7 @@ public class Vehiculo {
    public IMotor motor;
    public Carroceria tipoCarroceria;
    
+   @Override
    public String getPrestaciones(){
        String n1 = "Prestaciones:\n";
        n1 += "El presente vehículo es un " + marca + "\n";
@@ -28,5 +31,25 @@ public class Vehiculo {
        
        return n1;
    }
+
+    @Override
+    public String ConsumirCombustible() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String InyectarCombustible(int cantidad) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String RealizarEscape() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String RealizarCombustion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -5,8 +5,9 @@
  */
 package demoensamblaje;
 
-import patrones.Director;
-import patrones.VehiculoABuilder;
+import sinpatron.Carroceria;
+import sinpatron.MotorDiesel;
+import sinpatron.Vehiculo;
 
 /**
  *
@@ -18,7 +19,7 @@ public class DemoEnsamblaje {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*//Definir vehiculo
+        //Definir vehiculo
         Vehiculo v1 = new Vehiculo();
         v1.marca = "Citroen";
         v1.modelo = "Xsara Picasso";
@@ -55,7 +56,7 @@ public class DemoEnsamblaje {
         c2.habitaculoReforzado = true;
         c2.material = "fibra de carbono";
         c2.tipoCarroceria = "deportivo";
-        v2.tipoCarroceria = c1;
+        v2.tipoCarroceria = c2;
         v2.color = "plata cromado";
         
         //Construir extras
@@ -77,12 +78,12 @@ public class DemoEnsamblaje {
         //Debería agregar estos accesorios como parte de las prestaciones del vehiculo
         
         
-        //Mostrar prestaciones actualizadas del vehiculo*/
+        //Mostrar prestaciones actualizadas del vehiculo
 
-        Director director = new Director();
+        /*Director director = new Director();
         VehiculoABuilder builder1 = new VehiculoABuilder();
         director.constructVehiculoA(builder1);
-        System.out.println(builder1.getResultado().getPrestaciones());
+        System.out.println(builder1.getResultado().getPrestaciones());*/
     }
     
 }

@@ -21,7 +21,8 @@ El patron Decorator en este sistema fue de gran utilidad, para implementar cada 
 
 ## Diagrama de clases con patrones Builder y Decorator implementados
 ### _Enlace:_ https://lucid.app/lucidchart/invitations/accept/inv_dbc0caa7-8328-4444-b37c-7fa3c4d9837a
-![Diagrama de Clases](https://user-images.githubusercontent.com/34144827/125871834-0b09f971-36c5-47da-bb16-6362fd5d4a38.png)
+![Diagrama de Clases](https://user-images.githubusercontent.com/34144827/125879491-bb140b6d-3d3f-432b-aa99-12c52414e989.png)
+
 
 <br />
 <br />

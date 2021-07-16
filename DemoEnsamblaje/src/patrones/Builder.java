@@ -14,9 +14,11 @@ import sinpatron.Vehiculo;
  */
 public abstract class Builder{
 
-    protected Vehiculo vehiculo;
+    protected Vehiculo vehiculo = new Vehiculo();
 
-    abstract public void setColor();
+    public void setColor(){
+        this.vehiculo.color = "";
+    }
     abstract public void setDireccionAsistida();
     abstract public void setMarca();
     abstract public void setModelo();

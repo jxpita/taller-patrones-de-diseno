@@ -5,6 +5,9 @@
  */
 package demoensamblaje;
 
+import patrones.Director;
+import patrones.VehiculoABuilder;
+import patrones.VehiculoBBuilder;
 import sinpatron.Carroceria;
 import sinpatron.MotorDiesel;
 import sinpatron.Vehiculo;
@@ -19,6 +22,9 @@ public class DemoEnsamblaje {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("\n--------------------------------------------------");
+        System.out.println("*** Sin patrón Builder ***\n");
+        
         //Definir vehiculo
         Vehiculo v1 = new Vehiculo();
         v1.marca = "Citroen";
@@ -43,6 +49,7 @@ public class DemoEnsamblaje {
 
 
         //--------------------------------------------------
+        
         //Definir vehiculo
         Vehiculo v2 = new Vehiculo();
         v2.marca = "Audi";
@@ -67,6 +74,34 @@ public class DemoEnsamblaje {
         
         //--------------------------------------------------
 
+        System.out.println("\n--------------------------------------------------");
+        System.out.println("*** Con patrón Builder ***\n");
+
+        // Construyendo con la clase Director
+        Director director = new Director();
+        
+        // Definir un builder para vehiculo A
+        VehiculoABuilder builderA = new VehiculoABuilder();
+        
+        // Construir vehiculo A
+        director.constructVehiculoA(builderA);
+        
+        //Mostrar prestaciones del vehiculo
+        System.out.println(builderA.getResultado().getPrestaciones());
+
+        //--------------------------------------------------
+
+        // Definir un builder para vehiculo B
+        VehiculoBBuilder builderB = new VehiculoBBuilder();
+        
+        // Construir vehiculo B
+        director.constructVehiculoB(builderB);
+        
+        //Mostrar prestaciones del vehiculo
+        System.out.println(builderB.getResultado().getPrestaciones());
+
+        //--------------------------------------------------
+
         //TODO: Agregar accesorios: radio y sensores de retro a v1
         //Debería agregar estos accesorios como parte de las prestaciones del vehiculo
                 
@@ -79,11 +114,7 @@ public class DemoEnsamblaje {
         
         
         //Mostrar prestaciones actualizadas del vehiculo
-
-        /*Director director = new Director();
-        VehiculoABuilder builder1 = new VehiculoABuilder();
-        director.constructVehiculoA(builder1);
-        System.out.println(builder1.getResultado().getPrestaciones());*/
+        
     }
     
 }

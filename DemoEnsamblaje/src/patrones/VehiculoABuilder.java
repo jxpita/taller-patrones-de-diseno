@@ -50,7 +50,7 @@ public class VehiculoABuilder extends Builder{
     }
     
     @Override
-    public Vehiculo getResultado(){
+    public Vehiculo getVehiculo(){
         return super.vehiculo;
     }
     

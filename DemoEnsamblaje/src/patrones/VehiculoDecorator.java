@@ -9,7 +9,7 @@ package patrones;
  *
  * @author Juan Xavier Pita
  */
-public class VehiculoDecorator implements VehiculoBase{
+public abstract class VehiculoDecorator implements VehiculoBase{
 
     protected VehiculoBase wrapee;
 

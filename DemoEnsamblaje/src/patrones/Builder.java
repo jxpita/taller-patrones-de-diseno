@@ -24,6 +24,6 @@ public abstract class Builder{
     abstract public void setModelo();
     abstract public void setMotor();
     abstract public void setCarroceria();
-    abstract public Vehiculo getResultado();
+    abstract public Vehiculo getVehiculo();
 
 }

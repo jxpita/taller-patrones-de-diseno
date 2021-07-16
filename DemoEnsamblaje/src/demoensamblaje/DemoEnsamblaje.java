@@ -5,9 +5,13 @@
  */
 package demoensamblaje;
 
+import patrones.CamaraRetroDecorator;
 import patrones.Director;
+import patrones.RadioTactilDecorator;
+import patrones.SensorRetroDecorator;
 import patrones.VehiculoABuilder;
 import patrones.VehiculoBBuilder;
+import patrones.VehiculoBase;
 import sinpatron.Carroceria;
 import sinpatron.MotorDiesel;
 import sinpatron.Vehiculo;
@@ -25,7 +29,7 @@ public class DemoEnsamblaje {
         System.out.println("\n--------------------------------------------------");
         System.out.println("*** Sin patrón Builder ***\n");
         
-        //Definir vehiculo
+        //Definir vehiculo 1
         Vehiculo v1 = new Vehiculo();
         v1.marca = "Citroen";
         v1.modelo = "Xsara Picasso";
@@ -44,13 +48,13 @@ public class DemoEnsamblaje {
         //Construir extras
         v1.direccionAsistida = false;
         
-        //Mostrar prestaciones del vehiculo
+        //Mostrar prestaciones del vehiculo 1
         System.out.println(v1.getPrestaciones());
 
 
         //--------------------------------------------------
         
-        //Definir vehiculo
+        //Definir vehiculo 2
         Vehiculo v2 = new Vehiculo();
         v2.marca = "Audi";
         v2.modelo = "A3 Sportback";
@@ -69,7 +73,7 @@ public class DemoEnsamblaje {
         //Construir extras
         v2.direccionAsistida = true;
         
-        //Mostrar prestaciones del vehiculo
+        //Mostrar prestaciones del vehiculo 2
         System.out.println(v2.getPrestaciones());
         
         //--------------------------------------------------
@@ -86,8 +90,8 @@ public class DemoEnsamblaje {
         // Construir vehiculo A
         director.constructVehiculoA(builderA);
         
-        //Mostrar prestaciones del vehiculo
-        System.out.println(builderA.getResultado().getPrestaciones());
+        //Mostrar prestaciones del vehiculo A
+        System.out.println(builderA.getVehiculo().getPrestaciones());
 
         //--------------------------------------------------
 
@@ -97,24 +101,59 @@ public class DemoEnsamblaje {
         // Construir vehiculo B
         director.constructVehiculoB(builderB);
         
-        //Mostrar prestaciones del vehiculo
-        System.out.println(builderB.getResultado().getPrestaciones());
+        //Mostrar prestaciones del vehiculo B
+        System.out.println(builderB.getVehiculo().getPrestaciones());
 
         //--------------------------------------------------
 
         //TODO: Agregar accesorios: radio y sensores de retro a v1
         //Debería agregar estos accesorios como parte de las prestaciones del vehiculo
-                
+        System.out.println("\n--------------------------------------------------");
+        System.out.println("*** Con patrón Decorator (sin patrón Builder) ***\n");
+        VehiculoBase vb1 = v1;
+        vb1 = new RadioTactilDecorator(vb1);
+        vb1 = new SensorRetroDecorator(vb1);
+
         //Mostrar prestaciones actualizadas del vehiculo
-        
+        System.out.println("|| Vehiculo 1 ||");
+        System.out.println(vb1.getPrestaciones());
+
         //--------------------------------------------------
         
         //TODO: Agregar accesorios: camara de retro a v2
         //Debería agregar estos accesorios como parte de las prestaciones del vehiculo
-        
+        VehiculoBase vb2 = v2;
+        vb2 = new CamaraRetroDecorator(vb2);
         
         //Mostrar prestaciones actualizadas del vehiculo
+        System.out.println("|| Vehiculo 2 ||");
+        System.out.println(vb2.getPrestaciones());
         
+        //--------------------------------------------------
+
+        //TODO: Agregar accesorios: radio y sensores de retro a vA
+        //Debería agregar estos accesorios como parte de las prestaciones del vehiculo
+        System.out.println("\n--------------------------------------------------");
+        System.out.println("*** Con patrón Builder y Decorator ***\n");
+        VehiculoBase vbA = builderA.getVehiculo();
+        vbA = new RadioTactilDecorator(vbA);
+        vbA = new SensorRetroDecorator(vbA);
+
+        //Mostrar prestaciones actualizadas del vehiculo
+        System.out.println("|| Vehiculo A ||");
+        System.out.println(vbA.getPrestaciones());
+
+        //--------------------------------------------------
+        
+        //TODO: Agregar accesorios: camara de retro a vB
+        //Debería agregar estos accesorios como parte de las prestaciones del vehiculo
+        VehiculoBase vbB = builderB.getVehiculo();
+        vbB = new CamaraRetroDecorator(vbB);
+        
+        //Mostrar prestaciones actualizadas del vehiculo
+        System.out.println("|| Vehiculo B ||");
+        System.out.println(vbB.getPrestaciones());
+       
     }
     
 }

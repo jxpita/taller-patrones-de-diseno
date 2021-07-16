@@ -11,7 +11,7 @@ package patrones;
  */
 public class VehiculoDecorator implements VehiculoBase{
 
-    private VehiculoBase wrapee;
+    protected VehiculoBase wrapee;
 
     // VehiculoDecorator agrega VehiculoBase
     public VehiculoDecorator(VehiculoBase vb){

@@ -49,7 +49,7 @@ public class Vehiculo implements IMotor, VehiculoBase{
     @Override
     public String getPrestaciones(){
         String n1 = "Prestaciones:\n";
-        n1 += "El presente vehículo es un " + marca + "\n";
+        n1 += "El presente vehículo es un " + marca + " modelo " + modelo + "\n";
         n1 += "Estilo " + tipoCarroceria.tipoCarroceria + "\n";
         n1 += "Color: " + color + "\n";
         n1 += (direccionAsistida ? "Con ":"Sin ") + "dirección asistida" + "\n";

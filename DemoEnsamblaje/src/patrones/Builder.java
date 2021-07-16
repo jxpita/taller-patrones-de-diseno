@@ -5,8 +5,6 @@
  */
 package patrones;
 
-import sinpatron.Carroceria;
-import sinpatron.IMotor;
 import sinpatron.Vehiculo;
 
 
@@ -18,28 +16,12 @@ public abstract class Builder{
 
     protected Vehiculo vehiculo;
 
-    public void setColor(String color){
-        this.vehiculo.color = color;
-    }
-
-    public void setDireccionAsistida(boolean direccionAsistida){
-        this.vehiculo.direccionAsistida = direccionAsistida;
-    }
-
-    public void setMarca(String marca){
-        this.vehiculo.marca = marca;
-    }
-
-    public void setModelo(String modelo){
-        this.vehiculo.modelo = modelo;
-    }
-
-    public void setMotor(IMotor motor){
-        this.vehiculo.motor = motor;
-    }
-
-    public void setCarroceria(Carroceria tipoCarroceria){
-        this.vehiculo.tipoCarroceria = tipoCarroceria;
-    }
+    abstract public void setColor();
+    abstract public void setDireccionAsistida();
+    abstract public void setMarca();
+    abstract public void setModelo();
+    abstract public void setMotor();
+    abstract public void setCarroceria();
+    abstract public Vehiculo getResultado();
 
 }

@@ -18,19 +18,25 @@ public class Director{
     }
 
     public void constructVehiculoA(Builder builder){
-        // buildear vehiculo A
-        // builder.setColor(//color para vehiculo A);
-        // builder.setMarca(//marca para vehiculo A);
-        // builder.setModelo(//modelo para vehiculo A);
-        // etc . . .
+        
+        builder.setColor();
+        builder.setDireccionAsistida();
+        builder.setMarca();
+        builder.setModelo();
+        builder.setMotor();
+        builder.setCarroceria();
+        
     }
 
     public void constructVehiculoB(Builder builder){
-        // buildear vehiculo B
-        // builder.setColor(//color para vehiculo B);
-        // builder.setMarca(//marca para vehiculo B);
-        // builder.setModelo(//modelo para vehiculo B);
-        // etc . . .
+        
+        builder.setColor();
+        builder.setDireccionAsistida();
+        builder.setMarca();
+        builder.setModelo();
+        builder.setMotor();
+        builder.setCarroceria();
+        
     }
 
 }

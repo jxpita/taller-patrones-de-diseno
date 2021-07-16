@@ -11,5 +11,8 @@ package patrones;
  */
 public abstract class CamaraRetro extends VehiculoDecorator{
 
-
+    public CamaraRetro(VehiculoBase vb) {
+        super(vb);
+    }
+    
 }

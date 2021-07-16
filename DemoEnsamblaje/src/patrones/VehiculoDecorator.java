@@ -18,4 +18,9 @@ public class VehiculoDecorator implements VehiculoBase{
         this.wrapee = vb;
     }
 
+    @Override
+    public String getPrestaciones() {
+        return wrapee.getPrestaciones();
+    }
+
 }

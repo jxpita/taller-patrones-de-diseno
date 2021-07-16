@@ -11,5 +11,8 @@ package patrones;
  */
 public abstract class RadioTactil extends VehiculoDecorator{
 
+    public RadioTactil(VehiculoBase vb) {
+        super(vb);
+    }
 
 }

@@ -11,5 +11,8 @@ package patrones;
  */
 public abstract class SensorRetro extends VehiculoDecorator{
 
+    public SensorRetro(VehiculoBase vb) {
+        super(vb);
+    }
 
 }
